@@ -20,7 +20,7 @@
         <% if (qrCodeSrc) { %>
             <div class="qr-code">
                 <h2>Generated QR Code:</h2>
-                <img src="<%= qrCodeSrc %>" alt="QR Code" id="qr">
+                <img src="<%= qrCodeSrc %>" alt="QR Code" id="qr" title="Click to download">
             </div>
             <% } %>
                 <% if (error) { %>
@@ -34,7 +34,7 @@
             const imageUrl = document.getElementById("qr").src;
             const link = document.createElement('a');
             link.href = imageUrl;
-            link.download = 'qr_code.png';  // Specify the filename
+            link.download = 'qr_code.png';  
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
